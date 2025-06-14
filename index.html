@@ -4,22 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surprise untuk dek Indah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Great Vibes', cursive;
       background: linear-gradient(to bottom, #ffc0cb, #ffe4e1);
       color: #fff;
       overflow-x: hidden;
       height: 100vh;
     }
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       text-align: center;
       margin-top: 50px;
     }
     h2 {
-      font-size: 0.9em;
+      font-size: 1.2em;
       text-align: center;
       margin-top: -20px;
       font-weight: normal;
@@ -30,9 +31,9 @@
       background: rgba(255, 255, 255, 0.2);
       padding: 20px;
       border-radius: 15px;
-      font-size: 1em;
+      font-size: 1.2em;
       text-align: center;
-      line-height: 1.6em;
+      line-height: 1.8em;
       color: #fff;
     }
     .choices {
@@ -47,7 +48,7 @@
       border: 2px solid #fff;
       border-radius: 20px;
       padding: 15px 30px;
-      font-size: 1.2em;
+      font-size: 1.5em;
       cursor: pointer;
       transition: 0.3s;
     }
@@ -61,8 +62,8 @@
       margin-top: 30px;
       padding: 20px;
       text-align: center;
-      font-size: 1.1em;
-      line-height: 1.5em;
+      font-size: 1.4em;
+      line-height: 1.6em;
       color: #fff;
     }
     .falling-flowers {
@@ -79,7 +80,7 @@
       top: -50px;
       width: 30px;
       height: 30px;
-      background-image: url('https://cdn.pixabay.com/photo/2017/03/31/19/52/sakura-2199511_1280.png');
+      background-image: url('https://pngimg.com/uploads/sakura/sakura_PNG13607.png');
       background-size: contain;
       background-repeat: no-repeat;
       opacity: 0.8;
@@ -93,7 +94,8 @@
 </head>
 <body>
   <div class="falling-flowers" id="flowers"></div>
-  <h1>Happy Birthdayy, dekk.. 🎉🎉</h1>
+  <h1>Happy Birthday 🎉</h1>
+  <h2>dek Indah...</h2>
 
   <div class="note">
     Sehat selalu yaa dek, semoga pundakmu selalu dikuatkan, langkahmu diringankan, segala urusanmu dipermudah, dan hatimu dilapangkan...<br>
@@ -102,51 +104,4 @@
   </div>
 
   <div class="note">
-    dek Indah pilih yahh, klik sekali aja tapi wkwkk aku engga tahu dek Indah lagi ingin atau butuh apa,<br>
-    jadi aku siapin ini aja yahh:
-  </div>
-
-  <div class="choices">
-    <div class="choice" onclick="showResult(0)">Pilihan A</div>
-    <div class="choice" onclick="showResult(1)">Pilihan B</div>
-    <div class="choice" onclick="showResult(2)">Pilihan C</div>
-  </div>
-
-  <div class="result" id="result"></div>
-
-  <audio autoplay loop>
-    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Kevin_MacLeod/Carefree/Kevin_MacLeod_-_Carefree.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    const results = [
-      "✨ Liburan bareng ke tempat yang baru yuk, ke Thailand yang penting ada dek Indah 😌✈️",
-      "☕ Ke Jogja lagi yuk, ngopi sore di Jogja bareng dek Indah nemenin aku... ❤️",
-      "🌊 Jalan-jalan ke Bali? Cocok kesana, soalnya dek Indah udah pernah dan bisa jadi tour guide aku hehehe 💑"
-    ];
-
-    let alreadyClicked = false;
-
-    function showResult(index) {
-      if (alreadyClicked) return;
-      alreadyClicked = true;
-      document.getElementById('result').style.display = 'block';
-      document.getElementById('result').innerText = results[index];
-    }
-
-    function createFlowers() {
-      const flowerCount = 50;
-      for (let i = 0; i < flowerCount; i++) {
-        const flower = document.createElement('div');
-        flower.className = 'flower';
-        flower.style.left = Math.random() * 100 + 'vw';
-        flower.style.animationDelay = Math.random() * 10 + 's';
-        flower.style.opacity = 0.6 + Math.random() * 0.4;
-        flower.style.transform = `rotate(${Math.random() * 360}deg)`;
-        document.getElementById('flowers').appendChild(flower);
-      }
-    }
-    createFlowers();
-  </script>
-</body>
-</html>
+    dek Indah pilih yahh, klik
