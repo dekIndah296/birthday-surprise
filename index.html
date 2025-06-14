@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Surprise untuk Dek Indah</title>
+  <title>Surprise untuk dek Indah</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to top right, #ffafcc, #bde0fe);
+      background: linear-gradient(to bottom, #ffc0cb, #ffe4e1);
       color: #fff;
       overflow-x: hidden;
       height: 100vh;
@@ -19,7 +19,7 @@
       margin-top: 50px;
     }
     h2 {
-      font-size: 1.2em;
+      font-size: 1em;
       text-align: center;
       margin-top: -20px;
       font-weight: normal;
@@ -63,6 +63,7 @@
       text-align: center;
       font-size: 1.1em;
       line-height: 1.5em;
+      color: #fff;
     }
     .falling-flowers {
       position: fixed;
@@ -76,11 +77,13 @@
     .flower {
       position: absolute;
       top: -50px;
-      width: 20px;
-      height: 20px;
-      background-image: url('https://cdn-icons-png.flaticon.com/512/765/765568.png');
-      background-size: cover;
-      animation: fall 10s linear infinite;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://pngimg.com/uploads/petals/petals_PNG72535.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      animation: fall 12s linear infinite;
     }
     @keyframes fall {
       0% { transform: translateY(0) rotate(0); }
@@ -90,8 +93,8 @@
 </head>
 <body>
   <div class="falling-flowers" id="flowers"></div>
-  <h1>Happy Birthday 💖</h1>
-  <h2 style="font-size: 0.9em">dek Indah</h2>
+  <h1>Happy Birthday 🎉</h1>
+  <h2>dek Indah...</h2>
 
   <div class="note">
     Sehat selalu yaa dek, semoga pundakmu selalu dikuatkan, langkahmu diringankan, segala urusanmu dipermudah, dan hatimu dilapangkan...<br>
@@ -99,10 +102,15 @@
     Dan aku minta maaf yahh kalau sikap & perilaku aku pernah bikin dek Indah badmood 🙂
   </div>
 
+  <div class="note">
+    dek Indah pilih yahh, klik sekali aja tapi wkwkk aku engga tahu dek Indah lagi ingin atau butuh apa,
+    jadi aku siapin ini aja yahh:
+  </div>
+
   <div class="choices">
-    <div class="choice" onclick="showResult(0)">Pilih A</div>
-    <div class="choice" onclick="showResult(1)">Pilih B</div>
-    <div class="choice" onclick="showResult(2)">Pilih C</div>
+    <div class="choice" onclick="showResult(0)">Pilihan A</div>
+    <div class="choice" onclick="showResult(1)">Pilihan B</div>
+    <div class="choice" onclick="showResult(2)">Pilihan C</div>
   </div>
 
   <div class="result" id="result"></div>
@@ -113,9 +121,9 @@
 
   <script>
     const results = [
-      "Liburan bareng ke tempat yang baru yuk, ke Thailand yang penting ada dek Indah 😌✈️",
-      "ke Jogja lagi yuk, ngopi sore di Jogja bareng dek Indah nemenin aku... ☕❤️",
-      "Jalan-jalan ke Bali yukk? Cocok kesana, soalnya dek Indah udah pernah kesana dan bisa tour guide in aku hehehe🌊💑"
+      "✨ Liburan bareng ke tempat yang baru yuk, ke Thailand yang penting ada dek Indah 😌✈️",
+      "☕ Ke Jogja lagi yuk, ngopi sore di Jogja bareng dek Indah nemenin aku... ❤️",
+      "🌊 Jalan-jalan ke Bali? Cocok kesana, soalnya dek Indah udah pernah dan bisa jadi tour guide aku hehehe 💑"
     ];
 
     let alreadyClicked = false;
