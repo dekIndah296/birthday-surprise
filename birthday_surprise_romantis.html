@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise untuk Dek Indah</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top right, #ffafcc, #bde0fe);
+      color: #fff;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h2 {
+      font-size: 1.2em;
+      text-align: center;
+      margin-top: -20px;
+      font-weight: normal;
+    }
+    .note {
+      max-width: 90%;
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 1em;
+      text-align: center;
+      line-height: 1.6em;
+      color: #fff;
+    }
+    .choices {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      gap: 20px;
+    }
+    .choice {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid #fff;
+      border-radius: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .choice:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    .result {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.5em;
+    }
+    .falling-flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .flower {
+      position: absolute;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/765/765568.png');
+      background-size: cover;
+      animation: fall 10s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="falling-flowers" id="flowers"></div>
+  <h1>Happy Birthday 💖</h1>
+  <h2 style="font-size: 0.9em">dek Indah</h2>
+
+  <div class="note">
+    Sehat selalu yaa dek, semoga pundakmu selalu dikuatkan, langkahmu diringankan, segala urusanmu dipermudah, dan hatimu dilapangkan...<br>
+    Aku cuman ingin bilang makasihh udah pernah ngizinin aku kenal sisi dek Indah sejauh ini...<br>
+    Dan aku minta maaf yahh kalau sikap & perilaku aku pernah bikin dek Indah badmood 🙂
+  </div>
+
+  <div class="choices">
+    <div class="choice" onclick="showResult(0)">Pilih A</div>
+    <div class="choice" onclick="showResult(1)">Pilih B</div>
+    <div class="choice" onclick="showResult(2)">Pilih C</div>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const results = [
+      "Liburan bareng ke tempat yang baru yuk, ke Thailand yang penting ada dek Indah 😌✈️",
+      "ke Jogja lagi yuk, ngopi sore di Jogja bareng dek Indah nemenin aku... ☕❤️",
+      "Jalan-jalan ke Bali? Cocok kesana, soalnya dek Indah udah pernah kesana dan bisa tour guide in aku hehehe🌊💑"
+    ];
+
+    let alreadyClicked = false;
+
+    function showResult(index) {
+      if (alreadyClicked) return;
+      alreadyClicked = true;
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('result').innerText = results[index];
+    }
+
+    function createFlowers() {
+      const flowerCount = 30;
+      for (let i = 0; i < flowerCount; i++) {
+        const flower = document.createElement('div');
+        flower.className = 'flower';
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDelay = Math.random() * 10 + 's';
+        flower.style.opacity = Math.random();
+        document.getElementById('flowers').appendChild(flower);
+      }
+    }
+    createFlowers();
+  </script>
+</body>
+</html>
