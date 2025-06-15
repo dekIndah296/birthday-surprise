@@ -104,4 +104,53 @@
   </div>
 
   <div class="note">
-    dek Indah pilih yahh, klik
+    dek Indah pilih yahh, klik sekali aja tapi wkwkk aku engga tahu dek Indah lagi ingin atau butuh apa,<br>
+    jadi aku siapin ini aja yahh:
+  </div>
+
+  <div class="choices">
+    <div class="choice" onclick="showResult(0)">Pilihan A</div>
+    <div class="choice" onclick="showResult(1)">Pilihan B</div>
+    <div class="choice" onclick="showResult(2)">Pilihan C</div>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/Kevin_MacLeod/Peace_of_Mind/Kevin_MacLeod_-_Peace_of_Mind.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const results = [
+      "✨ Liburan bareng ke tempat yang baru yuk, ke Thailand yang penting ada dek Indah 😌✈️",
+      "☕ Ke Jogja lagi yuk, ngopi sore di Jogja bareng dek Indah nemenin aku... ❤️",
+      "🌊 Jalan-jalan ke Bali? Cocok kesana, soalnya dek Indah udah pernah dan bisa jadi tour guide aku hehehe 💑"
+    ];
+
+    let alreadyClicked = false;
+
+    function showResult(index) {
+      if (alreadyClicked) return;
+      alreadyClicked = true;
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('result').innerText = results[index];
+    }
+
+    function createFlowers() {
+      const flowerCount = 50;
+      for (let i = 0; i < flowerCount; i++) {
+        const flower = document.createElement('div');
+        flower.className = 'flower';
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDelay = Math.random() * 10 + 's';
+        flower.style.opacity = 0.6 + Math.random() * 0.4;
+        flower.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.getElementById('flowers').appendChild(flower);
+      }
+    }
+    createFlowers();
+  </script>
+</body>
+</html>
+
+      
