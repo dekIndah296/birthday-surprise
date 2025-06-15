@@ -1,84 +1,160 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise untuk dek Indah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
     body {
-      font-family: 'Pacifico', cursive;
-      text-align: center;
-      background: linear-gradient(to right, #ffe0e9, #f9f9f9);
-      color: #4a2c2a;
-      padding: 50px 20px;
+      margin: 0;
+      font-family: 'Great Vibes', cursive;
+      background: linear-gradient(to bottom, #ffc0cb, #ffe4e1);
+      color: #fff;
+      overflow-x: hidden;
+      height: 100vh;
     }
     h1 {
       font-size: 3em;
-      margin-bottom: 10px;
+      text-align: center;
+      margin-top: 50px;
     }
-    p {
+    h2 {
       font-size: 1.2em;
-      margin-bottom: 30px;
+      text-align: center;
+      margin-top: -20px;
+      font-weight: normal;
     }
-    .option-btn {
-      display: block;
-      width: 80%;
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 15px 20px;
-      font-size: 1.2em;
-      border: none;
+    .note {
+      max-width: 90%;
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
       border-radius: 15px;
-      background-color: #ff6f91;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-size: 1.2em;
+      text-align: center;
+      line-height: 1.8em;
+      color: #fff;
     }
-    .option-btn:hover {
-      background-color: #ff3f6f;
+    .choices {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
     }
-    #result {
-      margin-top: 40px;
+    .choice {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid #fff;
+      border-radius: 20px;
+      padding: 15px 30px;
       font-size: 1.5em;
-      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .choice:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    .result {
       display: none;
+      margin-top: 30px;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.4em;
+      line-height: 1.6em;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+    .falling-flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .flower {
+      position: absolute;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.ibb.co/tL1Zqfy/sakura-petal.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      animation: fall 10s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(110vh) rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <h1>Happy Birthday, Dek Indah 🎂💖</h1>
-  <p>Aku udah siapin sesuatu buat kamu... Pilih salah satu yaa~</p>
+  <div class="falling-flowers" id="flowers"></div>
+  <h1>Happy Birthday 🎉</h1>
+  <h2>dek Indah...</h2>
 
-  <button class="option-btn" onclick="showSurprise('A')">
-    A. Thailand Trip <br><small>(Kita, Kopi, dan Chiang Mai ☕🥹 & Kamu vs Tomyum, siapa yang lebih pedas? 🌶️😆)</small>
-  </button>
+  <div class="note">
+    Sehat selalu yaa dek, semoga pundakmu selalu dikuatkan, langkahmu diringankan, segala urusanmu dipermudah, dan hatimu dilapangkan...<br>
+    Aku cuman ingin bilang makasihh udah pernah ngizinin aku kenal sisi dek Indah sejauh ini...<br>
+    Dan aku minta maaf yahh kalau sikap & perilaku aku pernah bikin dek Indah badmood 🙂
+  </div>
 
-  <button class="option-btn" onclick="showSurprise('B')">
-    B. Jogja Jajan Time Lagi Yukkk <br><small>(Ngopi dan kamu di Jogja ☕💕 & Sore di Jogja 🌇)</small>
-  </button>
+  <div class="note">
+    dek Indah pilih yahh, klik sekali aja tapi wkwkk aku engga tahu dek Indah lagi ingin atau butuh apa,<br>
+    jadi aku siapin ini aja yahh:
+  </div>
 
-  <button class="option-btn" onclick="showSurprise('C')">
-    C. Bali Jalan-Jalan <br><small>(Cocok liburan ke Bali sama dek Indah aja 💕 & Escape ke Bali 🏝️)</small>
-  </button>
+  <div class="choices">
+    <div class="choice" onclick="showResult(0)">Pilihan A</div>
+    <div class="choice" onclick="showResult(1)">Pilihan B</div>
+    <div class="choice" onclick="showResult(2)">Pilihan C</div>
+  </div>
 
-  <div id="result"></div>
+  <div class="result" id="result"></div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2023/05/18/audio_ba83dbb4cd.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
-    function showSurprise(pilihan) {
-      let result = document.getElementById('result');
-      result.style.display = 'block';
-      if (pilihan === 'A') {
-        result.innerHTML = \"✨ Kita kabur yuk ke Thailand... Kita, Kopi, Chiang Mai dan... Kamu ♥ ✨\";
-      } else if (pilihan === 'B') {
-        result.innerHTML = \"☕ Jogja lagi yuk... Sore, jajan, dan kamu di sampingku, pelan-pelan aja ♥\";
-      } else if (pilihan === 'C') {
-        result.innerHTML = \"🌴 Escape ke Bali sama kamu aja deh, soalnya kamu yang paling tahu cara bikin aku senyum terus ✨\";
+    const results = [
+      "✨ Liburan bareng ke tempat yang baru yuk, ke Thailand yang penting ada dek Indah 😌✈️",
+      "☕ Ke Jogja lagi yuk, ngopi sore di Jogja bareng dek Indah nemenin aku... ❤️",
+      "🌊 Jalan-jalan ke Bali? Cocok kesana, soalnya dek Indah udah pernah dan bisa jadi tour guide aku hehehe 💑"
+    ];
+
+    let alreadyClicked = false;
+
+    function showResult(index) {
+      if (alreadyClicked) return;
+      alreadyClicked = true;
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('result').innerText = results[index];
+    }
+
+    function createFlowers() {
+      const flowerCount = 50;
+      for (let i = 0; i < flowerCount; i++) {
+        const flower = document.createElement('div');
+        flower.className = 'flower';
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDelay = Math.random() * 10 + 's';
+        flower.style.opacity = 0.6 + Math.random() * 0.4;
+        flower.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.getElementById('flowers').appendChild(flower);
       }
     }
+    createFlowers();
   </script>
 </body>
 </html>
 
-
-      
+     
