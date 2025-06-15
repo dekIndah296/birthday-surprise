@@ -6,59 +6,6 @@
   <title>Surprise untuk dek Indah</title>
   <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
   <style>
-  <!-- Efek Bunga Sakura & Musik -->
-<script>
-  // ======== Bunga Sakura ======== 
-  function createSakura() {
-    const sakura = document.createElement('div');
-    sakura.innerHTML = '🌸';
-    sakura.classList.add('sakura');
-    
-    // Random posisi, ukuran, kecepatan
-    sakura.style.left = Math.random() * 100 + 'vw';
-    sakura.style.animationDuration = Math.random() * 3 + 2 + 's';
-    sakura.style.opacity = Math.random() * 0.5 + 0.5;
-    sakura.style.fontSize = Math.random() * 15 + 10 + 'px';
-    
-    document.body.appendChild(sakura);
-    
-    // Hapus bunga setelah selesai animasi
-    setTimeout(() => sakura.remove(), 5000);
-  }
-
-  // Jalankan setiap 300ms
-  setInterval(createSakura, 300);
-
-  // ======== Musik ========
-  // Opsi 1: Musik default (happy birthday)
-  const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-happy-birthday-to-you-528.mp3');
-  audio.loop = true;
-  audio.volume = 0.3;
-
-  // Opsi 2: Ganti dengan link MP3-mu sendiri (jika ingin musik lain)
-  // const audio = new Audio('https://link-musik-kamu.mp3');
-
-  // Play musik (dengan error handling)
-  document.addEventListener('click', () => {
-    audio.play().catch(e => console.log("Play musik gagal: ", e));
-  }, { once: true }); // Hanya butuh 1 klik untuk aktivasi
-</script>
-
-<style>
-  /* CSS Efek Sakura (tambahkan di <head>) */
-  .sakura {
-    position: fixed;
-    top: -10%;
-    z-index: 999;
-    pointer-events: none; /* Biar tidak mengganggu klik */
-    animation: fall linear infinite;
-    user-select: none;
-  }
-  @keyframes fall {
-    to { transform: translateY(105vh); }
-  }
-</style>  
-    
     body {
       margin: 0;
       font-family: 'Merienda', cursive;
