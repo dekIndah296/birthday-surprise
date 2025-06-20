@@ -70,34 +70,9 @@
       position: relative;
       z-index: 2;
     }
-    .falling-flowers {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .flower {
-      position: absolute;
-      top: -50px;
-      width: 30px;
-      height: 30px;
-      background-image: url('https://i.ibb.co/tL1Zqfy/sakura-petal.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.8;
-      animation: fall 10s linear infinite;
-    }
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0); }
-      100% { transform: translateY(110vh) rotate(360deg); }
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <div class="falling-flowers" id="flowers"></div>
   <h1>Happy Birthday, dekk... 🎉🎉</h1>
 
   <div class="note">
@@ -139,19 +114,6 @@
       document.getElementById('result').innerText = results[index];
     }
 
-    function createFlowers() {
-      const flowerCount = 50;
-      for (let i = 0; i < flowerCount; i++) {
-        const flower = document.createElement('div');
-        flower.className = 'flower';
-        flower.style.left = Math.random() * 100 + 'vw';
-        flower.style.animationDelay = Math.random() * 10 + 's';
-        flower.style.opacity = 0.6 + Math.random() * 0.4;
-        flower.style.transform = `rotate(${Math.random() * 360}deg)`;
-        document.getElementById('flowers').appendChild(flower);
-      }
-    }
-    createFlowers();
   </script>
 </body>
 </html>
